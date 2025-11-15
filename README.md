@@ -1,5 +1,9 @@
 # **Arkivendor**, **Arkivenue** & **ai-rkiv** _(Powered by HTTPayer)_
 
+- **backend**: [`Arkivendor`](backend/README.md)
+- **frontend**: [`Arkivenue`](frontend/README.md)
+- **cli**: [`ai-rkiv`](cli/README.md)
+
 **Overview**
 
 A minimal, agent-powered proof-of-concept that demonstrates how AI agents can purchase, persist, and query Polkadot stash-account data using Arkiv + HTTPayer + PAPI + a marketplace (Arkivenue). This project shows how agents can seamlessly pay for infrastructure via x402 to access and store blockchain data, without needing to manage wallets or gas.
