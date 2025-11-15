@@ -1,8 +1,20 @@
 [project]
-name = "backend"
+name = "arkivendor"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
     "arkiv-sdk>=1.0.0a8",
     "python-dotenv>=1.2.1",
+    "x402>=0.2.1",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.32.0",
+    "web3>=7.0.0",
+    "click>=8.1.7",
+    "requests>=2.32.0",
 ]
+
+[project.scripts]
+arkiv-cli = "cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["src", "src.*"]

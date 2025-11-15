@@ -1,0 +1,180 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.pyc
+*.pyo
+
+# Virtual environments (don't copy local venv to Docker)
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.tmproj
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+tests/
+test-client.ts
+*test*.py
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Node.js / TypeScript (if building separately)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+dist/
+*.tsbuildinfo
+.npm
+.eslintcache
+package-lock.json
+yarn.lock
+
+# Environment (use Docker env vars instead)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Arkiv responses (don't copy to container)
+.arkivendor/
+responses/
+
+# Build outputs
+*.js.map
+*.d.ts.map
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Database (shouldn't be in container image)
+*.db
+*.sqlite
+*.sqlite3
+
+# Documentation
+docs/
+site/
+*.md
+!README.md
+QUICKSTART.md
+ARKIVENDOR_README.md
+TEST_CLIENT_README.md
+CLI_USAGE.md
+
+# Notes
+notes.txt
+TODO.txt
+.notes/
+
+# Claude
+.claude/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Backup files
+*.bak
+*.backup
+
+# Docker files (don't copy Docker files into the image)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+azure-pipelines.yml
+Jenkinsfile
+
+# TypeScript source (if you compile before Docker build)
+*.ts
+!*.d.ts
+tsconfig.json
+
+# UV cache
+.uv/
+
+# Development scripts
+scripts/
+dev/
