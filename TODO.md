@@ -87,38 +87,7 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 
 ---
 
-## Project-Specific TODOs
-
-### Arkivendor (Backend)
-
-- [ ] Implement x402-protected HTTP API wrapping Arkiv SDK
-- [ ] Add endpoints for storing JSON-encoded snapshot objects (Polkadot account info)
-- [ ] Add endpoints for retrieving snapshots with TTL support
-- [ ] Integrate HTTPayer for x402 payment handling
-- [ ] Add error handling and retry logic
-- [ ] Write API documentation
-
-### Arkivenue (Marketplace)
-
-- [ ] Create marketplace page/UI (can be mocked / locally deployed)
-- [ ] Add listing for Memory Bucket (Arkiv-backed storage)
-  - Specify pricing per write and read
-  - Document TTL behavior
-- [ ] Add listing for Polkadot Data API (Arkivendor backend)
-  - Show pay-per-call pricing
-  - Document API endpoints and usage
-
-### ai-rkiv (CLI Agent)
-
-- [ ] Implement TypeScript CLI using PAPI (Polkadot-API)
-- [ ] Connect to Polkadot (light-client or WS provider)
-- [ ] Query `system.account` for given stash address
-- [ ] Write snapshot to Arkiv via x402 API + HTTPayer
-- [ ] Read previous snapshot from Arkiv
-- [ ] Detect and report changes between snapshots
-- [ ] Add interval-based execution option
-- [ ] Add CLI arguments and configuration options
-- [ ] Write usage documentation
+## More TODOs
 
 ### Integration & Testing
 
