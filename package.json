@@ -13,10 +13,8 @@
     "lint:frontend": "npm run lint --workspace frontend",
     "test:cli": "npm test --workspace cli",
     "build": "npm run build:ts && npm run build:frontend"
-  }
-  ,
-  "vercel": {
-    "installCommand": "rm -rf package-lock.json node_modules && npm install"
-  }
-  
+  },
+  "devDependencies": { "lightningcss": "^1.x.x",
+    "@tailwindcss/oxide": "^4.x.x"}
+ 
 }
