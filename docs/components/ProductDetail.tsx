@@ -100,6 +100,111 @@ export default function ProductDetail({ product, onBack, onPaymentClick }: Produ
             <button className="text-xs sm:text-sm text-pink-600 hover:text-pink-700">View cURL</button>
           </div>
         </div>
+
+        {/* Function Reference Table - only for Spuro Functions SDK */}
+        {product.name === 'Spuro Functions SDK' && (
+          <div className="border-t pt-4 sm:pt-6 mt-4 sm:mt-6">
+            <h3 className="font-semibold mb-3 text-sm sm:text-base">Function Reference</h3>
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-xs sm:text-sm border border-gray-200 bg-white rounded-lg overflow-hidden">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-3 py-2 text-left font-semibold text-gray-700">
+                      Name
+                    </th>
+                    <th className="px-3 py-2 text-left font-semibold text-gray-700">
+                      Purpose
+                    </th>
+                    <th className="px-3 py-2 text-left font-semibold text-gray-700">
+                      Input
+                    </th>
+                    <th className="px-3 py-2 text-left font-semibold text-gray-700">
+                      Backend endpoint(s)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-3 py-2 font-mono text-[0.7rem]">createEntity</td>
+                    <td className="px-3 py-2">
+                      Store a new snapshot or payload in Arkiv with attributes and TTL.
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">fetchClient, baseUrl, {`{payload, content_type?, attributes?, ttl?}`}</code>
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">POST /entities</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-3 py-2 font-mono text-[0.7rem]">readEntity</td>
+                    <td className="px-3 py-2">
+                      Fetch a previously stored snapshot and its metadata by key.
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">fetchClient, baseUrl, entityKey</code>
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">
+                        GET /entities/&lt;entity_key&gt;
+                      </code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-3 py-2 font-mono text-[0.7rem]">updateEntity</td>
+                    <td className="px-3 py-2">
+                      Update an existing entity&apos;s payload, attributes, content type, or TTL.
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">fetchClient, baseUrl, entityKey, {`{payload?, attributes?, content_type?, ttl?}`}</code>
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">PUT /entities/&lt;entity_key&gt;</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-3 py-2 font-mono text-[0.7rem]">deleteEntity</td>
+                    <td className="px-3 py-2">
+                      Delete an entity from Arkiv storage.
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">fetchClient, baseUrl, entityKey</code>
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">DELETE /entities/&lt;entity_key&gt;</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-3 py-2 font-mono text-[0.7rem]">
+                      queryEntities
+                    </td>
+                    <td className="px-3 py-2">
+                      Query snapshots by attributes using a query string (e.g. type, timestamp, custom fields).
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">fetchClient, baseUrl, {`{query, limit?, include_payload?}`}</code>
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">GET /entities/query</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-3 py-2 font-mono text-[0.7rem]">transferEntity</td>
+                    <td className="px-3 py-2">
+                      Transfer ownership of an entity from backend wallet to a new owner address.
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">fetchClient, baseUrl, {`{entity_key, new_owner}`}</code>
+                    </td>
+                    <td className="px-3 py-2">
+                      <code className="font-mono text-[0.7rem]">POST /entities/transfer</code>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
