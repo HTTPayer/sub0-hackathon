@@ -12,7 +12,7 @@ type TabContextValue = {
 const TabContext = createContext<TabContextValue | undefined>(undefined)
 
 export function TabProvider({ children }: { children: ReactNode }) {
-  const [activeTab, setActiveTab] = useState<TabType>('marketplace')
+  const [activeTab, setActiveTab] = useState<TabType>('catalogue')
 
   return (
     <TabContext.Provider value={{ activeTab, setActiveTab }}>

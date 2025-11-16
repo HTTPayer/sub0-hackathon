@@ -25,7 +25,7 @@ export default function ProductDetail({ product, onBack, onPaymentClick }: Produ
         onClick={onBack}
         className="text-pink-600 hover:text-pink-700 mb-4 sm:mb-6 flex items-center text-sm sm:text-base"
       >
-        ← Back to marketplace
+        ← Back to catalogue
       </button>
 
       <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200">

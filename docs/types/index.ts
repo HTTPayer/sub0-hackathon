@@ -33,4 +33,4 @@ export interface Session {
   capabilities: string[]
 }
 
-export type TabType = 'marketplace' | 'sessions'
+export type TabType = 'catalogue' | 'sessions'

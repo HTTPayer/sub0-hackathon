@@ -10,14 +10,14 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 
   - Walkthrough of what you built + your pitch
   - Include: problem, solution, demo, market context, Milestone 2 overview
-  - Show: purchasing via Spuro marketplace, running ai-rkiv agent, reading + writing snapshots, and TTL expiry in action
+  - Show: running ai-rkiv, reading + writing snapshots via Arkivendor, and TTL expiry in action
   - Upload to any platform (e.g., YouTube, Loom) and share the link
 
 - [ ] Pitch deck (URL)
 
   - Problem & solution
   - Market research & competitive analysis
-  - Technical approach (Arkivendor backend, Spuro marketplace, ai-rkiv CLI)
+  - Technical approach (Arkivendor backend, docs frontend, ai-rkiv CLI)
   - Milestone 2 plan summary
 
 - [ ] Public GitHub repository
@@ -29,7 +29,7 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 
 - [ ] Demo video showing prototype/concept (separate from pitch video)
 
-  - Demonstrate: purchasing via the marketplace, running the agent, reading + writing snapshots, and TTL expiry in action
+  - Demonstrate: running the agent, reading + writing snapshots via Arkivendor, and TTL expiry in action
 
 - [ ] User feedback or validation evidence (e.g. surveys, results from mini marketing campaign)
 
@@ -43,20 +43,20 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 
   - ai-rkiv CLI connecting to Polkadot via PAPI
   - Arkivendor backend API functional
-  - Spuro marketplace (can be mocked / locally deployed)
+  - Arkivendor docs frontend (can be mocked / locally deployed)
 
 - [ ] Functional prototype demonstrating core features
 
   - ai-rkiv agent can query Polkadot stash accounts
   - Arkivendor API can store/retrieve snapshots with TTL
   - HTTPayer handles x402 payments seamlessly
-  - Spuro marketplace displays the Memory Bucket listing (Polkadot data is fetched externally via PAPI)
+  - Docs frontend explains the Arkiv-backed memory capability (Polkadot data is fetched externally via PAPI)
 
 - [ ] Clear instructions for judges to test functionality
 
   - Setup instructions for Arkivendor backend
   - Setup instructions for ai-rkiv CLI
-  - How to access Spuro marketplace
+  - How to open the Arkivendor docs frontend
   - How to run the agent and verify it works
 
 - [ ] Demo URL (if deployed) - nice to have
@@ -72,7 +72,7 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 - [ ] Public live demo link
 
   - Arkivendor backend API endpoint
-  - Spuro marketplace page (can be mocked / locally deployed)
+  - Arkivendor docs frontend (can be mocked / locally deployed)
 
 - [ ] Public repo with `README.md`: what it does, how to run it, how Arkiv is used
 
@@ -83,7 +83,7 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 - [ ] 2-3 minute demo video
   - Show Arkiv integration: storing and retrieving Polkadot account snapshots
   - Demonstrate TTL expiry behavior
-  - Show how agents purchase Arkiv storage via marketplace
+  - Show how agents pay for Arkiv storage via Arkivendor + HTTPayer
 
 ---
 
@@ -94,7 +94,7 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 - [ ] End-to-end test: agent queries Polkadot → stores in Arkiv → reads back
 - [ ] Test TTL expiry behavior
 - [ ] Test x402 payment flow with HTTPayer
-- [ ] Test marketplace purchase flow
+- [ ] Test end-to-end Arkivendor payment flow (no separate marketplace UI)
 - [ ] Verify error handling across all components
 
 ### Documentation

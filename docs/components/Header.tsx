@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "Marketplace" },
+  { href: "/", label: "Overview" },
   { href: "/use-cases", label: "Use Cases" },
 ];
 
@@ -17,8 +17,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-xl sm:text-2xl font-bold">Spuro</h1>
-            <p className="text-xs text-gray-500">Powered by HTTPayer</p>
+            <h1 className="text-xl sm:text-2xl font-bold">Arkivendor</h1>
+            <p className="text-xs text-gray-500">Arkiv + x402 &mdash; powered by httpayer</p>
           </div>
         </div>
         <nav

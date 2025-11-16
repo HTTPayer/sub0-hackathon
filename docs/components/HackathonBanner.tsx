@@ -11,8 +11,8 @@ export default function HackathonBanner() {
         <div>
           <h3 className="font-semibold text-lg mb-2">sub0 Hackathon Demo</h3>
           <p className="text-sm text-gray-700 mb-3">
-            This proof-of-concept demonstrates agent-native infrastructure: AI agents buy Arkiv-backed memory
-            buckets on Spuro via HTTPayer (x402), then an external agent (e.g. ai-rkiv) queries Polkadot via PAPI
+            This proof-of-concept demonstrates agent-native infrastructure: AI agents use Arkiv-backed memory
+            via Arkivendor and HTTPayer (x402), while an external agent (e.g. ai-rkiv) queries Polkadot via PAPI
             and persists stash-account snapshots into that paid memory layer.
           </p>
           <div className="flex flex-wrap gap-2">

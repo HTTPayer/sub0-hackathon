@@ -19,37 +19,38 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Spuro - AI Agents Marketplace",
-    template: "%s | Spuro",
+    default: "Arkivendor – powered by httpayer",
+    template: "%s | Arkivendor",
   },
   description:
-    "AI agents now can buy their own infrastructure! Marketplace and catalog of autonomous agents — built by HTTPayer.",
+    "Arkivendor is an Arkiv + x402 backend, documented as an agent-friendly API and SDK catalogue — powered by httpayer.",
   keywords: [
-    "AI agents",
-    "marketplace",
-    "autonomous agents",
+    "Arkivendor",
+    "Arkiv",
+    "httpayer",
+    "x402",
     "agent infrastructure",
-    "hackathon",
+    "paid storage",
   ],
   authors: [
     {
-      name: "HTTPayer",
+      name: "httpayer",
       url: "https://httpayer.example",
     },
   ],
-  creator: "HTTPayer",
+  creator: "httpayer",
   openGraph: {
-    title: "Spuro — AI Agents Marketplace",
+    title: "Arkivendor – powered by httpayer",
     description:
-      "Discover, buy, and run autonomous AI agents that provision their own infrastructure.",
-    url: "https://Spuro.example", // replace with your real site URL
-    siteName: "Spuro",
+      "Documentation and SDK catalogue for Arkivendor, an Arkiv + x402 backend for agent-friendly paid storage.",
+    url: "https://arkivendor.example", // replace with your real site URL
+    siteName: "Arkivendor",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Spuro — AI Agents Marketplace",
+        alt: "Arkivendor – powered by httpayer",
       },
     ],
     locale: "en_US",
@@ -57,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spuro — AI Agents Marketplace",
+    title: "Arkivendor – powered by httpayer",
     description:
-      "Discover autonomous AI agents that can provision and manage their own infrastructure.",
+      "Docs and examples for Arkivendor, an Arkiv + x402 backend consumed by AI agents like AI‑rkiv.",
     images: ["/og-image.png"],
     creator: "@httpayer",
   },
@@ -69,7 +70,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  // themeColor moved out of metadata per Next.js recommendations
   robots: {
     index: true,
     follow: true,
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 };
 
 // Set metadataBase so Next can resolve social images/OG/twitter assets correctly
-export const metadataBase = new URL("https://spuro.example");
+export const metadataBase = new URL("https://arkivendor.example");
 
 export default function RootLayout({
   children,
@@ -119,9 +119,7 @@ export default function RootLayout({
 
             <footer className="w-full border-t border-slate-200 dark:border-slate-800 text-sm text-slate-600 dark:text-slate-400">
               <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-                <div>
-                  © {year} Spuro — Built by HTTPayer. All rights reserved.
-                </div>
+                <div>© {year} Arkivendor — powered by httpayer.</div>
                 <div>
                   <a href="/terms" className="underline offset-2">
                     Terms

@@ -11,7 +11,7 @@ export default function UseCasesPage() {
       <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
         <header className="mb-8 sm:mb-10">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-600 mb-2">
-            Spuro Playbook
+            Arkivendor Playbook
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">
             Use Cases for Agent-Native Infrastructure
@@ -49,12 +49,10 @@ export default function UseCasesPage() {
             </div>
 
             <p className="text-sm sm:text-base text-gray-700 mt-3">
-              The <span className="font-semibold">ai-rkiv</span> agent runs
-              outside of Spuro (e.g. in a Node.js/TypeScript environment). It
-              connects to Polkadot via PAPI, takes periodic snapshots of stash
-              accounts, and stores them in Arkiv through the{" "}
-              <span className="font-semibold">Memory Bucket</span> capability
-              purchased via HTTPayer.
+              The <span className="font-semibold">ai-rkiv</span> agent runs in a
+              Node.js/TypeScript environment. It connects to Polkadot via PAPI, takes
+              periodic snapshots of stash accounts, and stores them in Arkiv through
+              Arkivendor&apos;s HTTP API, paid via HTTPayer.
             </p>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
@@ -63,9 +61,9 @@ export default function UseCasesPage() {
                   1. Discover &amp; purchase
                 </p>
                 <p className="text-sm text-gray-700">
-                  Agent queries Spuro&apos;s marketplace, finds the{" "}
-                  <span className="font-semibold">Memory Bucket</span>{" "}
-                  capability, and authorizes spend via HTTPayer (x402).
+                  Agent is configured with Arkivendor&apos;s endpoint, discovers the
+                  available arkivolts (SDK functions), and authorizes spend via
+                  HTTPayer (x402).
                 </p>
               </div>
 
@@ -84,9 +82,9 @@ export default function UseCasesPage() {
                   3. Store &amp; recall snapshots
                 </p>
                 <p className="text-sm text-gray-700">
-                  Snapshots are written to Arkiv via Arkivendor. HTTPayer
-                  handles payments per write/read, while TTL ensures old data
-                  expires automatically.
+                  Snapshots are written to Arkiv via Arkivendor. HTTPayer handles
+                  payments per write/read, while TTL ensures old data expires
+                  automatically.
                 </p>
               </div>
             </div>
@@ -97,14 +95,13 @@ export default function UseCasesPage() {
               </p>
               <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
                 <li>
-                  The <span className="font-semibold">Memory Bucket</span>{" "}
-                  listing in Spuro represents the Arkiv-based storage that the
-                  <span className="font-semibold"> ai-rkiv</span> agent
-                  purchases.
+                  The Arkivendor HTTP API represents the Arkiv-based storage that the
+                  <span className="font-semibold"> ai-rkiv</span> agent uses via
+                  arkivolts.
                 </li>
                 <li>
-                  Your marketplace UI shows how agents discover and price this
-                  capability before using it programmatically.
+                  This docs site shows how agents discover and understand these
+                  capabilities before using them programmatically.
                 </li>
                 <li>
                   End-to-end, this demonstrates agent-native infra: discovery,
