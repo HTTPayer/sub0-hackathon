@@ -8,6 +8,7 @@ const navItems = [
   { href: "/", label: "Overview" },
   { href: "/use-cases", label: "Use Cases" },
   { href: "/milestone-2", label: "Milestone 2" },
+  { href: "/demo", label: "Demo" },
 ];
 
 export default function Header() {
