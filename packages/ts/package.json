@@ -1,0 +1,45 @@
+{
+  "name": "spuro-functions",
+  "version": "0.1.0",
+  "description": "Lightweight SDK for Spuro backend API",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "example": "tsx examples/basic-usage.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["spuro", "functions", "sdk", "x402", "web3"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "dotenv": "^16.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "viem": "^2.31.0",
+    "x402-fetch": "^0.3.3"
+  },
+  "peerDependencies": {
+    "viem": "^2.31.0"
+  },
+  "peerDependenciesMeta": {
+    "viem": {
+      "optional": true
+    }
+  }
+}
