@@ -1,4 +1,4 @@
-# TODO: ai-rkiv (CLI Agent)
+# TODO: AI-Spuro (CLI Agent)
 
 - [ ] Implement TypeScript CLI using PAPI (Polkadot-API)
 - [ ] Connect to Polkadot (light-client or WS provider)

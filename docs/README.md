@@ -1,14 +1,14 @@
-# Arkivendor Docs & Catalogue
+# Spuro Docs & Catalogue
 
-A Next.js application that documents **Arkivendor – powered by httpayer**: an Arkiv + x402 backend exposed as an agent-friendly HTTP API and SDK (arkivolts) and consumed by the **AI‑rkiv** CLI agent.
+A Next.js application that documents **Spuro – powered by HTTPayer**: an Arkiv-backed, x402-protected backend exposed as an agent-friendly HTTP API and SDK (spuro functions) and consumed by the **AI-Spuro** CLI agent.
 
 ## Features
 
-- 🤖 **AI-Native Infrastructure**: Shows how agents can use Arkiv-backed storage via Arkivendor
+- 🤖 **AI-Native Infrastructure**: Shows how agents can use Arkiv-backed storage via Spuro
 - 💳 **HTTPayer Integration**: x402-protected APIs with pay-per-use pricing, paid by agents
-- 💾 **Arkiv Storage (Arkivendor)**: Persistent encrypted memory for agent state via Arkiv entities with TTL
-- 🔗 **External Polkadot Integration**: Designed to be used alongside the `ai-rkiv` agent, which runs in Node.js/TypeScript, queries stash-account data via PAPI, and then stores snapshots in Arkiv via Arkivendor
-- 🧩 **Arkivolts SDK Catalogue**: Documents a small set of client-side functions (arkivolts) that wrap Arkivendor endpoints (`createEntity`, `readEntity`, `queryEntities`, `snapshotStashToArkiv`)
+- 💾 **Arkiv-Backed Storage (Spuro)**: Persistent encrypted memory for agent state via Arkiv entities with TTL
+- 🔗 **External Polkadot Integration**: Designed to be used alongside the `AI-Spuro` agent, which runs in Node.js/TypeScript, queries stash-account data via PAPI, and then stores snapshots in Arkiv via Spuro
+- 🧩 **Spuro Functions Catalogue**: Documents a small set of client-side functions (spuro functions) that wrap Spuro endpoints (`createEntity`, `readEntity`, `queryEntities`, `snapshotStashToArkiv`)
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ frontend/
 │   ├── page.tsx            # Main page component
 │   └── globals.css         # Global styles
 ├── components/
-│   ├── Spuro.tsx           # Main documentation/catalogue component (Arkivendor overview)
+│   ├── Spuro.tsx           # Main documentation/catalogue component (Spuro overview)
 │   ├── Header.tsx          # Navigation header
 │   ├── HackathonBanner.tsx # Demo banner
 │   ├── MarketplaceView.tsx # Marketplace grid view
@@ -63,9 +63,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Live Arkivendor API Docs
+### Live Spuro API Docs
 
-The Arkivendor backend is deployed with interactive OpenAPI docs:
+The Spuro backend is deployed with interactive OpenAPI docs:
 
 - Live API: [`https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/`](https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/)
 - API docs: [`https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/docs`](https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/docs)
@@ -90,9 +90,9 @@ npm start
 
 ### Main Components
 
-- **Spuro** (`Spuro.tsx`): Root component rendering the Arkivendor overview, functions catalogue, and quickstart sections
-- **Header**: Top navigation with Arkivendor branding
-- **MarketplaceView**: Grid display of arkivolts/SDK capabilities
+- **Spuro** (`Spuro.tsx`): Root component rendering the Spuro overview, functions catalogue, and quickstart sections
+- **Header**: Top navigation with Spuro branding
+- **MarketplaceView**: Grid display of spuro functions / SDK capabilities
 - **ProductDetail**: Detailed capability information with integration code
 - **PaymentModal**: Example HTTPayer/x402 payment authorization interface
 
@@ -102,7 +102,7 @@ npm start
 
 - Single-page docs/catalogue layout
 
-#### Product Cards (Arkivolts)
+#### Product Cards (Spuro Functions)
 
 - Feature badges
 - Pricing estimates
@@ -126,7 +126,7 @@ npm start
 
 The application uses mock data defined in `data/mockData.ts`:
 
-- **Arkivolts Product**: `Arkivolts for snapshots` (a documentation card for the SDK functions used by AI‑rkiv)
+- **Spuro Functions Product**: `Spuro Functions for snapshots` (a documentation card for the SDK functions used by AI-Spuro)
 - **Sessions**: Sample session data you can use if you wire up a sessions view in the future
 
 ## Styling
@@ -151,12 +151,12 @@ Key interfaces defined in `types/index.ts`:
 
 This frontend participates in a broader proof-of-concept demonstrating agent-native infrastructure where AI agents can:
 
-- Use **Arkiv-backed memory** via Arkivendor&apos;s HTTP API
+- Use **Arkiv-backed memory** via Spuro&apos;s HTTP API
 - Pay for reads/writes via HTTPayer (x402)
-- Rely on the `ai-rkiv` agent (Node.js/TypeScript) to monitor Polkadot stash accounts via PAPI and persist snapshots into Arkiv via Arkivendor
-- Work with a small, documented set of arkivolts (SDK functions) instead of raw HTTP calls
+- Rely on the `AI-Spuro` agent (Node.js/TypeScript) to monitor Polkadot stash accounts via PAPI and persist snapshots into Arkiv via Spuro
+- Work with a small, documented set of spuro functions instead of raw HTTP calls
 
-Built for the sub0 Hackathon showcasing **Arkiv + HTTPayer + PAPI** integration, with Polkadot data fetching handled outside of Arkivendor and Arkiv capabilities documented here as a catalogue rather than a marketplace UI.
+Built for the sub0 Hackathon showcasing **Arkiv + HTTPayer + PAPI** integration, with Polkadot data fetching handled outside of Spuro and Arkiv capabilities documented here as a catalogue rather than a marketplace UI.
 
 ## Deploy on Vercel
 

@@ -18,18 +18,18 @@ export default function Spuro() {
         <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 px-2">
-              Arkivendor &mdash; Arkiv + x402 backend
+              Spuro &mdash; Arkiv + x402 backend
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 px-2">
-              Agent-friendly paid storage, documented as a small SDK catalogue and consumed by the AI‑rkiv CLI.
+              Agent-friendly paid storage, documented as a small SDK catalogue and consumed by the AI-Spuro CLI.
             </p>
             <div className="flex justify-center px-4">
               <div className="grid gap-2 text-sm text-gray-600 max-w-2xl text-left">
                 <p>
-                  Arkivendor exposes a simple HTTP API on top of Arkiv, protected with x402 payments and automated via httpayer.
+                  Spuro exposes a simple HTTP API on top of Arkiv, protected with x402 payments and automated via HTTPayer.
                 </p>
                 <p>
-                  The AI‑rkiv CLI provides a lightweight SDK where each function (arkivolt) wraps one or more Arkivendor endpoints for agents.
+                  The AI-Spuro CLI provides a lightweight SDK where each function wraps one or more Spuro endpoints for agents.
                 </p>
               </div>
             </div>
@@ -39,7 +39,7 @@ export default function Spuro() {
           <section className="grid gap-4 sm:gap-6 md:grid-cols-3 mb-10">
             <div className="rounded-xl border border-gray-200 bg-white p-4 sm:p-5 shadow-sm">
               <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                Arkivendor backend
+                Spuro backend
               </h3>
               <p className="text-xs sm:text-sm text-gray-600">
                 FastAPI service that wraps the Arkiv SDK behind x402, exposing
@@ -50,22 +50,22 @@ export default function Spuro() {
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-4 sm:p-5 shadow-sm">
               <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                Arkivolts SDK (client)
+                Spuro Functions SDK (client)
               </h3>
               <p className="text-xs sm:text-sm text-gray-600">
                 A lightweight TypeScript layer (used by the CLI) where each function
                 such as <code className="font-mono text-[0.7rem]">createEntity</code> or{" "}
-                <code className="font-mono text-[0.7rem]">queryEntities</code> is an
-                arkivolt.
+                <code className="font-mono text-[0.7rem]">queryEntities</code> is a
+                Spuro Function.
               </p>
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-4 sm:p-5 shadow-sm">
               <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                AI‑rkiv CLI agent
+                AI-Spuro CLI agent
               </h3>
               <p className="text-xs sm:text-sm text-gray-600">
                 Example CLI agent that talks to Polkadot via PAPI, then uses the
-                arkivolts SDK to store and query snapshots through Arkivendor.
+                Spuro Functions SDK to store and query snapshots through Spuro.
               </p>
             </div>
           </section>
@@ -73,10 +73,10 @@ export default function Spuro() {
           {/* Functions catalogue */}
           <MarketplaceView products={products} onProductSelect={setSelectedProduct} />
 
-          {/* Arkivolts table */}
+          {/* Spuro Functions table */}
           <section className="mt-10 overflow-x-auto">
             <h3 className="text-sm font-semibold text-gray-900 mb-3">
-              Arkivolts (SDK functions)
+              Spuro Functions (SDK layer)
             </h3>
             <table className="min-w-full text-xs sm:text-sm border border-gray-200 bg-white rounded-lg overflow-hidden">
               <thead className="bg-gray-50">
@@ -97,9 +97,7 @@ export default function Spuro() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
-                  <td className="px-3 py-2 font-mono text-[0.7rem]">
-                    createEntity
-                  </td>
+                  <td className="px-3 py-2 font-mono text-[0.7rem]">createEntity</td>
                   <td className="px-3 py-2">
                     Store a new snapshot or payload in Arkiv with attributes and TTL.
                   </td>
@@ -196,23 +194,23 @@ export default function Spuro() {
                   rel="noreferrer"
                   className="text-pink-600 hover:text-pink-700 underline"
                 >
-                  Arkivendor live API docs
+                  Spuro live API docs
                 </a>
                 .
               </p>
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-4 sm:p-5 shadow-sm">
               <h3 className="text-sm font-semibold text-gray-900 mb-2">
-                Getting started with AI‑rkiv
+                Getting started with AI-Spuro
               </h3>
               <ol className="text-xs sm:text-sm text-gray-600 space-y-1 list-decimal list-inside">
-                <li>Run the Arkivendor backend and configure your .env.</li>
+                <li>Run the Spuro backend and configure your .env.</li>
                 <li>
-                  Install and configure the AI‑rkiv CLI so it can call Arkivendor over
-                  x402/httpayer.
+                  Install and configure the AI-Spuro CLI so it can call Spuro over
+                  x402/HTTPayer.
                 </li>
                 <li>
-                  Use the arkivolts SDK functions (below) from the agent to write and
+                  Use the Spuro Functions (below) from the agent to write and
                   query snapshots.
                 </li>
               </ol>

@@ -14,10 +14,10 @@ export default function MarketplaceView({ products, onProductSelect }: Marketpla
     <div className="space-y-6 sm:space-y-8">
       <div className="space-y-1">
         <h3 className="text-xl sm:text-2xl font-bold text-center">
-          Arkivolts (SDK functions)
+          Spuro Functions (SDK layer)
         </h3>
         <p className="text-sm sm:text-base text-gray-600 text-center">
-          Client-side functions that wrap Arkivendor&apos;s HTTP API and are paid via x402/httpayer.
+          Client-side Spuro Functions that wrap Spuro&apos;s HTTP API and are paid via x402/HTTPayer.
         </p>
       </div>
       <div

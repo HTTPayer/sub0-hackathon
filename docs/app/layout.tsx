@@ -19,38 +19,38 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Arkivendor – powered by httpayer",
-    template: "%s | Arkivendor",
+    default: "Spuro Docs – powered by HTTPayer",
+    template: "%s | Spuro Docs",
   },
   description:
-    "Arkivendor is an Arkiv + x402 backend, documented as an agent-friendly API and SDK catalogue — powered by httpayer.",
+    "Spuro is an Arkiv-backed, x402-protected backend, documented as an agent-friendly API and SDK catalogue — powered by HTTPayer.",
   keywords: [
-    "Arkivendor",
+    "Spuro",
     "Arkiv",
-    "httpayer",
+    "HTTPayer",
     "x402",
     "agent infrastructure",
     "paid storage",
   ],
   authors: [
     {
-      name: "httpayer",
-      url: "https://httpayer.example",
+      name: "HTTPayer",
+      url: "https://HTTPayer.example",
     },
   ],
-  creator: "httpayer",
+  creator: "HTTPayer",
   openGraph: {
-    title: "Arkivendor – powered by httpayer",
+    title: "Spuro Docs – powered by HTTPayer",
     description:
-      "Documentation and SDK catalogue for Arkivendor, an Arkiv + x402 backend for agent-friendly paid storage.",
-    url: "https://arkivendor.example", // replace with your real site URL
-    siteName: "Arkivendor",
+      "Documentation and SDK catalogue for Spuro, an Arkiv-backed, x402-protected backend for agent-friendly paid storage.",
+    url: "https://spuro.example", // replace with your real site URL
+    siteName: "Spuro Docs",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Arkivendor – powered by httpayer",
+        alt: "Spuro Docs – powered by HTTPayer",
       },
     ],
     locale: "en_US",
@@ -58,11 +58,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arkivendor – powered by httpayer",
+    title: "Spuro Docs – powered by HTTPayer",
     description:
-      "Docs and examples for Arkivendor, an Arkiv + x402 backend consumed by AI agents like AI‑rkiv.",
+      "Docs and examples for Spuro, an Arkiv-backed, x402-protected backend consumed by AI agents like AI-Spuro.",
     images: ["/og-image.png"],
-    creator: "@httpayer",
+    creator: "@HTTPayer",
   },
   icons: {
     icon: "/favicon.ico",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 };
 
 // Set metadataBase so Next can resolve social images/OG/twitter assets correctly
-export const metadataBase = new URL("https://arkivendor.example");
+export const metadataBase = new URL("https://spuro.example");
 
 export default function RootLayout({
   children,
@@ -119,7 +119,7 @@ export default function RootLayout({
 
             <footer className="w-full border-t border-slate-200 dark:border-slate-800 text-sm text-slate-600 dark:text-slate-400">
               <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-                <div>© {year} Arkivendor — powered by httpayer.</div>
+                <div>© {year} Spuro — powered by HTTPayer.</div>
                 <div>
                   <a href="/terms" className="underline offset-2">
                     Terms

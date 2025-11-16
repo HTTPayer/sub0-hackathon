@@ -11,7 +11,7 @@ export default function UseCasesPage() {
       <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
         <header className="mb-8 sm:mb-10">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-600 mb-2">
-            Arkivendor Playbook
+            Spuro Playbook
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">
             Use Cases for Agent-Native Infrastructure
@@ -19,7 +19,7 @@ export default function UseCasesPage() {
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
             Explore how autonomous AI agents can buy and use infrastructure via
             HTTPayer. Start with the{" "}
-            <span className="font-semibold">ai-rkiv</span> Polkadot snapshot
+            <span className="font-semibold">AI-Spuro</span> Polkadot snapshot
             monitor.
           </p>
         </header>
@@ -36,9 +36,9 @@ export default function UseCasesPage() {
                   Polkadot Stash Snapshot Monitor
                 </h2>
                 <p className="text-sm sm:text-base text-gray-600 mb-2">
-                  <span className="font-semibold">Agent:</span> ai-rkiv ·{" "}
+                  <span className="font-semibold">Agent:</span> AI-Spuro ·{" "}
                   <span className="font-semibold">Capability:</span> Memory
-                  Bucket (Arkivendor) ·{" "}
+                  Bucket (Spuro) ·{" "}
                   <span className="font-semibold">Payments:</span> HTTPayer
                   (x402)
                 </p>
@@ -49,10 +49,10 @@ export default function UseCasesPage() {
             </div>
 
             <p className="text-sm sm:text-base text-gray-700 mt-3">
-              The <span className="font-semibold">ai-rkiv</span> agent runs in a
+              The <span className="font-semibold">AI-Spuro</span> agent runs in a
               Node.js/TypeScript environment. It connects to Polkadot via PAPI, takes
               periodic snapshots of stash accounts, and stores them in Arkiv through
-              Arkivendor&apos;s HTTP API, paid via HTTPayer.
+              Spuro&apos;s HTTP API, paid via HTTPayer.
             </p>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
@@ -61,8 +61,8 @@ export default function UseCasesPage() {
                   1. Discover &amp; purchase
                 </p>
                 <p className="text-sm text-gray-700">
-                  Agent is configured with Arkivendor&apos;s endpoint, discovers the
-                  available arkivolts (SDK functions), and authorizes spend via
+                  Agent is configured with Spuro&apos;s endpoint, discovers the
+                  available Spuro Functions (SDK layer), and authorizes spend via
                   HTTPayer (x402).
                 </p>
               </div>
@@ -82,7 +82,7 @@ export default function UseCasesPage() {
                   3. Store &amp; recall snapshots
                 </p>
                 <p className="text-sm text-gray-700">
-                  Snapshots are written to Arkiv via Arkivendor. HTTPayer handles
+                  Snapshots are written to Arkiv via Spuro. HTTPayer handles
                   payments per write/read, while TTL ensures old data expires
                   automatically.
                 </p>
@@ -95,9 +95,9 @@ export default function UseCasesPage() {
               </p>
               <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
                 <li>
-                  The Arkivendor HTTP API represents the Arkiv-based storage that the
-                  <span className="font-semibold"> ai-rkiv</span> agent uses via
-                  arkivolts.
+                  The Spuro HTTP API represents the Arkiv-based storage that the
+                  <span className="font-semibold"> AI-Spuro</span> agent uses via
+                  Spuro Functions.
                 </li>
                 <li>
                   This docs site shows how agents discover and understand these

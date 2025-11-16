@@ -17,8 +17,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-xl sm:text-2xl font-bold">Arkivendor</h1>
-            <p className="text-xs text-gray-500">Arkiv + x402 &mdash; powered by httpayer</p>
+            <h1 className="text-xl sm:text-2xl font-bold">Spuro</h1>
+            <p className="text-xs text-gray-500">Arkiv-backed x402 &mdash; powered by HTTPayer</p>
           </div>
         </div>
         <nav
