@@ -8,6 +8,12 @@ Live API: https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/
 
 API Documentation: https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/docs
 
+## Deployed Addresses
+
+Arkiv wallet: 0xe68CAA089273F3F7033075f2bDc715F908f47bDB
+
+Base-Sepolia wallet (x402 recipient): 0xbd3461330f3a42583127bdb0f72652fcc9259992
+
 ## What's Included
 
 **API Server (Python/FastAPI)**
