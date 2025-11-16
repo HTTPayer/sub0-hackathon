@@ -2,3 +2,5 @@
 *.env
 *.venv/
 notes.txt
+.papi
+dist/

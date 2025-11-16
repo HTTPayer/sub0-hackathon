@@ -1,0 +1,34 @@
+{
+  "name": "spuro-agent",
+  "version": "1.0.0",
+  "description": "CLI agent for Spuro API ",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "spuro": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polkadot-api/descriptors": "file:.papi\\descriptors",
+    "@polkadot-api/sdk-staking": "^0.3.4",
+    "polkadot-api": "^1.20.0",
+    "axios": "^1.7.9",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.7",
+    "openai": "^4.73.0",
+    "viem": "^2.21.68",
+    "x402-fetch": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.9"
+  }
+}
