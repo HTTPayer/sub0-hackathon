@@ -2,6 +2,12 @@
 
 FastAPI server providing HTTP endpoints for Arkiv blockchain storage with X402 payment integration.
 
+## Deployed Instance
+
+Live API: https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/
+
+API Documentation: https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org/docs
+
 ## What's Included
 
 **API Server (Python/FastAPI)**
@@ -155,4 +161,4 @@ backend/
 
 ## License
 
-MIT
+TBA

@@ -43,13 +43,23 @@ def entity_exists(entity_key: str) -> bool:
 # Initialize FastAPI app
 app = FastAPI(title="Arkiv API with X402 Payments")
 
+print(f'constants: PAYTO_ADDRESS={PAYTO_ADDRESS}, API_COST={API_COST}, ARKIV_RPC_URL={ARKIV_RPC_URL}, BACKEND_WALLET={BACKEND_WALLET}, MAINNET={MAINNET}')
+
+# Configure custom facilitator URL if needed
+facilitator_url = os.getenv("FACILITATOR_URL")
+facilitator_config = {"url": facilitator_url} if facilitator_url else None
+
+if facilitator_config:
+    print(f'X402 facilitator: {facilitator_url}')
+
 # Apply X402 payment middleware to all entity endpoints
 app.middleware("http")(
     require_payment(
         price=API_COST,
         pay_to_address=PAYTO_ADDRESS,
         network="base-sepolia",
-        path=["/entities", "/entities/query", "/entities/transfer"]
+        path=["/entities", "/entities/query", "/entities/transfer"],
+        facilitator_config=facilitator_config
     )
 )
 
