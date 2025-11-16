@@ -13,8 +13,6 @@
     "lint:frontend": "npm run lint --workspace frontend",
     "test:cli": "npm test --workspace cli",
     "build": "npm run build:ts && npm run build:frontend"
-  },
-  "dependencies": {
-    "lightningcss-darwin-x64": "^1.30.2"
   }
+  
 }
