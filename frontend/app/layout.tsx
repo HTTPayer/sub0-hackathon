@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Spuro",
   },
   description:
-    "AI agents that buy their own infrastructure. Marketplace and catalog of autonomous agents — built by HTTPayer.",
+    "AI agents now can buy their own infrastructure! Marketplace and catalog of autonomous agents — built by HTTPayer.",
   keywords: [
     "AI agents",
     "marketplace",
@@ -120,7 +120,7 @@ export default function RootLayout({
             <footer className="w-full border-t border-slate-200 dark:border-slate-800 text-sm text-slate-600 dark:text-slate-400">
               <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
                 <div>
-                  © {year} Arkivenue — Built by HTTPayer. All rights reserved.
+                  © {year} Spuro — Built by HTTPayer. All rights reserved.
                 </div>
                 <div>
                   <a href="/terms" className="underline offset-2">

@@ -32,7 +32,6 @@ export default function ProductDetail({ product, onBack, onPaymentClick }: Produ
         <div className="flex justify-between items-start mb-4 sm:mb-6 flex-wrap gap-3">
           <div className="flex-1 min-w-0">
             <h2 className="text-2xl sm:text-3xl font-bold mb-2">{product.name}</h2>
-            <p className="text-sm sm:text-base text-gray-600">Provider: {product.provider}</p>
           </div>
           <div className="flex items-center space-x-2 flex-shrink-0">
             <Lock size={20} className="text-green-600" />

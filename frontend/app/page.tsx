@@ -1,5 +1,5 @@
-import Airkivenue from '@/components/Airkivenue'
+import Spuro from '@/components/Spuro'
 
 export default function Home() {
-  return <Airkivenue />
+  return <Spuro />
 }

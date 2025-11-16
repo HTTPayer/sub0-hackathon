@@ -1,31 +1,36 @@
 'use client'
 
 import React from 'react'
-import CategoryCard from './CategoryCard'
 import ProductCard from './ProductCard'
-import { Category, Product } from '@/types'
+import { Product } from '@/types'
 
 interface MarketplaceViewProps {
-  categories: Category[]
   products: Product[]
   onProductSelect: (product: Product) => void
 }
 
-export default function MarketplaceView({ categories, products, onProductSelect }: MarketplaceViewProps) {
+export default function MarketplaceView({ products, onProductSelect }: MarketplaceViewProps) {
   return (
-    <>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
-        {categories.map((cat) => (
-          <CategoryCard key={cat.name} category={cat} />
-        ))}
+    <div className="space-y-6 sm:space-y-8">
+      <div className="space-y-1">
+        <h3 className="text-xl sm:text-2xl font-bold text-center">
+       Arkivolts
+        </h3>
+        <p className="text-sm sm:text-base text-gray-600 text-center">
+          Arkiv Functions paid with HTTPayer
+        </p>
       </div>
-
-      <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Most Used Arkivendor Capabilities</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div
+        className={
+          products.length === 1
+            ? 'flex justify-center gap-4 sm:gap-6'
+            : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'
+        }
+      >
         {products.map((product) => (
           <ProductCard key={product.id} product={product} onSelect={onProductSelect} />
         ))}
       </div>
-    </>
+    </div>
   )
 }
