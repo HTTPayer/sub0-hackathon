@@ -1,8 +1,9 @@
 # Spuro – powered by HTTPayer
 
 - **backend**: [`Spuro` (Arkiv + x402 backend)](backend/README.md)
-- **frontend**: [Spuro Docs & catalogue (Next.js)](docs/README.md)
+- **frontend**: [Spuro Docs & catalogue (Next.js)](frontend/README.md)
 - **cli**: [`AI-Spuro` agent](cli/README.md)
+- **packages**: [Spuro Functions SDK](packages/README.md)
 
 **Overview**
 
