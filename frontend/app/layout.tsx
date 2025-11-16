@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "../components/Header";
 import { TabProvider } from "../components/TabProvider";
 import HackathonBanner from "../components/HackathonBanner";
+import { Web3Provider } from "../components/Web3Provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -107,31 +108,33 @@ export default function RootLayout({
         </a>
 
         <TabProvider>
-          <div className="min-h-screen flex flex-col">
-            <header className="z-40">
-              <Header />
-              
-            </header>
+          <Web3Provider>
+            <div className="min-h-screen flex flex-col">
+              <header className="z-40">
+                <Header />
+                
+              </header>
 
-            <main id="content" role="main" className="flex-1 w-full">
-              {children}
-            </main>
+              <main id="content" role="main" className="flex-1 w-full">
+                {children}
+              </main>
 
-            <footer className="w-full border-t border-slate-200 dark:border-slate-800 text-sm text-slate-600 dark:text-slate-400">
-              <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-                <div>© {year} Spuro — powered by HTTPayer.</div>
-                <div>
-                  <a href="/terms" className="underline offset-2">
-                    Terms
-                  </a>
-                  <span className="mx-2">·</span>
-                  <a href="/privacy" className="underline offset-2">
-                    Privacy
-                  </a>
+              <footer className="w-full border-t border-slate-200 dark:border-slate-800 text-sm text-slate-600 dark:text-slate-400">
+                <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+                  <div>© {year} Spuro — powered by HTTPayer.</div>
+                  <div>
+                    <a href="/terms" className="underline offset-2">
+                      Terms
+                    </a>
+                    <span className="mx-2">·</span>
+                    <a href="/privacy" className="underline offset-2">
+                      Privacy
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </footer>
-          </div>
+              </footer>
+            </div>
+          </Web3Provider>
         </TabProvider>
       </body>
     </html>

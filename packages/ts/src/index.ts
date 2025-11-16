@@ -111,8 +111,18 @@ export async function createEntity(
   });
 
   if (!response.ok) {
-    const error = await response.json();
-    throw new Error(`Create entity failed: ${JSON.stringify(error)}`);
+    let errorBody: any = null;
+    try {
+      errorBody = await response.json();
+    } catch {
+      try {
+        const text = await (response as any).text?.();
+        errorBody = { raw: text };
+      } catch {
+        errorBody = { raw: null };
+      }
+    }
+    throw new Error(`Create entity failed: ${JSON.stringify(errorBody)}`);
   }
 
   return response.json() as Promise<CreateEntityResponse>;

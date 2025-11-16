@@ -5,58 +5,69 @@ import { baseSepolia } from "viem/chains";
 
 export const dynamic = "force-dynamic";
 
-const API_BASE_URL =
+const DEFAULT_API_BASE_URL =
   process.env.SPURO_API_BASE_URL ||
   process.env.API_BASE_URL ||
   "https://qu01n0u34hdsh6ajci1ie9trq8.ingress.akash-palmito.org";
 
-const RPC_URL = process.env.RPC_URL || "https://sepolia.base.org";
+const DEFAULT_RPC_URL = "https://sepolia.base.org";
 
-let PRIVATE_KEY =
-  process.env.SPURO_DEMO_PRIVATE_KEY ||
-  process.env.CLIENT_PRIVATE_KEY ||
-  process.env.PRIVATE_KEY ||
-  "";
+export async function POST(request: Request) {
+  try {
+    const body = await request.json().catch(() => null);
+    const apiBaseUrl: string =
+      (body && typeof body.apiBaseUrl === "string" && body.apiBaseUrl) ||
+      DEFAULT_API_BASE_URL;
+    let privateKey: string | undefined =
+      body && typeof body.privateKey === "string" && body.privateKey
+        ? body.privateKey
+        : undefined;
+    const rpcUrl: string =
+      (body && typeof body.rpcUrl === "string" && body.rpcUrl) ||
+      DEFAULT_RPC_URL;
 
-if (PRIVATE_KEY && !PRIVATE_KEY.startsWith("0x")) {
-  PRIVATE_KEY = `0x${PRIVATE_KEY}`;
-}
+    if (!apiBaseUrl) {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          error: "Missing API base URL",
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
 
-if (!PRIVATE_KEY || PRIVATE_KEY === "0x") {
-  console.warn(
-    "[demo/unlock] Missing SPURO_DEMO_PRIVATE_KEY / CLIENT_PRIVATE_KEY / PRIVATE_KEY env – demo will fail without credentials."
-  );
-}
+    if (!privateKey) {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          error:
+            "Missing demo private key. Paste a Base Sepolia key for this demo call.",
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
 
-// Lazily initialised wallet client + fetchWithPay so we reuse them across requests
-let fetchWithPaySingleton: ((input: RequestInfo, init?: RequestInit) => Promise<Response>) | null =
-  null;
+    if (!privateKey.startsWith("0x")) {
+      privateKey = `0x${privateKey}`;
+    }
 
-function getFetchWithPay() {
-  if (!PRIVATE_KEY || PRIVATE_KEY === "0x") {
-    throw new Error(
-      "Spuro demo private key is not configured. Set SPURO_DEMO_PRIVATE_KEY or CLIENT_PRIVATE_KEY."
-    );
-  }
-
-  if (!fetchWithPaySingleton) {
-    const account = privateKeyToAccount(PRIVATE_KEY as `0x${string}`, { nonceManager });
-
-    const client = createWalletClient({
-      account,
-      transport: http(RPC_URL),
-      chain: baseSepolia,
+    const account = privateKeyToAccount(privateKey as `0x${string}`, {
+      nonceManager,
     });
 
-    fetchWithPaySingleton = wrapFetchWithPayment(fetch, client);
-  }
+    const walletClient = createWalletClient({
+      account,
+      chain: baseSepolia,
+      transport: http(rpcUrl),
+    });
 
-  return fetchWithPaySingleton;
-}
-
-export async function POST() {
-  try {
-    const fetchWithPay = getFetchWithPay();
+    const fetchWithPay = wrapFetchWithPayment(fetch, walletClient as any);
 
     const now = new Date().toISOString();
 
@@ -77,7 +88,7 @@ export async function POST() {
       ttl: 3600,
     };
 
-    const response = await fetchWithPay(`${API_BASE_URL}/entities`, {
+    const response = await fetchWithPay(`${apiBaseUrl}/entities`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -23,7 +23,7 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": ["spuro", "functions", "sdk", "x402", "web3"],
-  "author": "Your Name",
+  "author": "HTTPayer",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",

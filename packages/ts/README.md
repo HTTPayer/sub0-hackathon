@@ -1,6 +1,6 @@
 # Spuro Functions SDK
 
-Lightweight TypeScript SDK for the Spuro backend API. Provides simple, functional wrappers around backend endpoints with support for any fetch client.
+Lightweight TypeScript SDK for the Spuro backend API. This package provides simple, functional wrappers around Arkiv-backed backend endpoints and example code that agents (including the **AI-Spuro** CLI in `../cli`) can use to persist/query state.
 
 ## Features
 
@@ -9,6 +9,8 @@ Lightweight TypeScript SDK for the Spuro backend API. Provides simple, functiona
 - Works with native `fetch`, `x402-fetch`, or any fetch-compatible client
 - Zero dependencies (except for your chosen fetch client)
 - Helper utilities for payload encoding/decoding
+
+See the root `README.md` for the full architecture overview (Spuro backend + Spuro Docs frontend + AI-Spuro CLI) and how this SDK fits into the Arkiv track submission.
 
 ## Installation
 
