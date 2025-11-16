@@ -11,37 +11,72 @@ export const categories: Category[] = [
 export const products: Product[] = [
   {
     id: 1,
-    name: 'Spuro Functions for snapshots',
+    name: 'Spuro Functions SDK',
     provider: 'Spuro',
     category: 'Memory',
     description:
-      'Client-side Spuro Functions used by the AI-Spuro CLI to call Spuro: createEntity, readEntity, queryEntities, and snapshotStashToArkiv. These wrap the Spuro HTTP API and are paid via x402/HTTPayer.',
-    pricing: { write: 0.0001, read: 0.00005 },
-    estimate: 'Example pricing only – see backend config for real values',
+      'Lightweight TypeScript SDK providing functional wrappers around Spuro backend endpoints. Includes createEntity, readEntity, updateEntity, deleteEntity, queryEntities, and transferEntity. Works with any fetch client (native fetch, x402-fetch, etc.) and handles payload encoding/decoding.',
+    pricing: { perCall: 0.01 },
+    estimate: '0.01 ETH per API call (configurable via API_COST)',
     uptime: 'FastAPI + Arkiv',
     users: 'Used by AI-Spuro demo agent',
     features: [
-      'createEntity / readEntity / queryEntities helpers',
-      'optional snapshotStashToArkiv orchestration',
-      'x402/HTTPayer integration at the HTTP layer'
+      'createEntity / readEntity / updateEntity / deleteEntity',
+      'queryEntities with attribute-based filtering',
+      'transferEntity for ownership changes',
+      'encodePayload / decodePayload utilities',
+      'x402/HTTPayer integration via fetch client',
+      'Zero runtime dependencies (bring your own fetch)'
     ],
-    integration: `// Example TypeScript SDK layer (spuro-functions.ts)
-import { ArkivClient } from './arkiv-client'
+    integration: `// Install from local path
+npm install ../../packages/ts
 
-export async function createEntity(payload: string, attributes: any = {}) {
-  return ArkivClient.post('/entities', { payload, attributes, ttl: 86400 })
-}
+// Setup with x402-fetch for paid endpoints
+import { wrapFetchWithPayment } from "x402-fetch";
+import { createWalletClient, http } from "viem";
+import { privateKeyToAccount } from "viem/accounts";
+import { baseSepolia } from "viem/chains";
+import {
+  createEntity,
+  readEntity,
+  queryEntities,
+  encodePayload,
+  decodePayload,
+} from "spuro-functions";
 
-export async function readEntity(entityKey: string) {
-  return ArkivClient.get(\`/entities/\${entityKey}\`)
-}
+// Setup wallet client
+const account = privateKeyToAccount("0x...");
+const client = createWalletClient({
+  account,
+  transport: http("https://sepolia.base.org"),
+  chain: baseSepolia,
+});
 
-export async function queryEntities(query: string, limit = 10) {
-  return ArkivClient.get('/entities/query', { query, limit })
-}
+// Wrap fetch with payment handling
+const fetchWithPay = wrapFetchWithPayment(fetch, client);
 
-// High-level helper used by AI-Spuro:
-// snapshotStashToArkiv(stashAddress) -> creates a snapshot via PAPI + createEntity()`
+// Create an entity
+const response = await createEntity(fetchWithPay, "http://localhost:8000", {
+  payload: encodePayload("Hello World"),
+  content_type: "text/plain",
+  attributes: { type: "greeting", timestamp: Date.now() },
+  ttl: 86400, // 1 day
+});
+
+// Read an entity
+const entity = await readEntity(
+  fetchWithPay,
+  "http://localhost:8000",
+  response.entity_key
+);
+console.log(decodePayload(entity.data));
+
+// Query entities
+const results = await queryEntities(fetchWithPay, "http://localhost:8000", {
+  query: 'type = "greeting"',
+  limit: 10,
+  include_payload: false,
+});`
   }
 ]
 
