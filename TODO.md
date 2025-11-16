@@ -1,5 +1,12 @@
 # Submission Checklist
 
+**Hackathon Deliverables**
+
+- Public GitHub repo with: Spuro (Python backend) + AI-Spuro (TS CLI) + Spuro Docs frontend + README.
+- A working Spuro backend API endpoint (deployed) and a docs site that describes how to use it.
+- (Optional) A separate section or demo flow showing how AI-Spuro uses PAPI to fetch Polkadot data and Spuro to persist snapshots.
+- A 2-minute demo video showing: running the agent, reading + writing snapshots via Spuro, and TTL expiry in action.
+
 ## POLKADOT MAIN TRACK CHECKLIST
 
 Use this checklist to ensure you've submitted everything required. **Incomplete submissions will be disqualified.**
