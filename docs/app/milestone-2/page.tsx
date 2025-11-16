@@ -14,7 +14,7 @@ export default function Milestone2Page() {
             Spuro x HTTPayer · Sub0 Hackathon
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">
-            Milestone 2 Plan – Spuro Agent SDK
+            Milestone 2 Plan: Spuro – Arkiv-backed Agent SDK
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
             This page follows the{" "}
@@ -34,205 +34,289 @@ export default function Milestone2Page() {
           <HackathonBanner />
         </div>
 
+        {/* Milestone 2 template sections */}
         <section className="space-y-6 sm:space-y-8">
-          {/* Objective */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-2">Objective</h2>
-            <p className="text-sm sm:text-base text-gray-700">
-              Turn <span className="font-semibold">AI-Spuro</span> from a single
-              demo agent into the foundation of an{" "}
-              <span className="font-semibold">AI SDK for Spuro</span>, so other
-              teams can build their own custom agents that use Arkiv-backed
-              Spuro memory and HTTPayer/x402 payments. Milestone 2 focuses on a
-              reusable TypeScript SDK layer that wraps{" "}
-              <span className="font-semibold">Spuro Functions</span> for
-              agent-style workflows, with Polkadot integrations as one concrete
-              example vertical on top.
-            </p>
-          </div>
-
-          {/* Deliverables */}
+          {/* WHERE WE ARE NOW */}
           <div className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
             <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-              Deliverables
+              📍 Where we are now
             </h2>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
-              <li>
-                A packaged{" "}
-                <span className="font-semibold">AI-Spuro SDK</span> (built on
-                top of the existing Spuro Functions in{" "}
-                <code className="font-mono text-[0.7rem]">packages/ts</code>)
-                exposing higher-level tasks like{" "}
-                <span className="font-semibold">
-                  snapshotStashToArkiv, trackValidatorPerformance, and
-                  queryStashHistory
-                </span>
-                .
-              </li>
-              <li>
-                Deeper{" "}
-                <span className="font-semibold">Spuro + Arkiv integration</span>{" "}
-                patterns for agents: opinionated ways to model long‑lived memory,
-                snapshots, and TTL semantics using the existing entity API.
-              </li>
-              <li>
-                One or more{" "}
-                <span className="font-semibold">example data sources</span>{" "}
-                plugged into the SDK (e.g. the existing Polkadot snapshot
-                monitor using PAPI, plus at least one non‑Polkadot source),
-                modeled as reusable capabilities that read external state and
-                persist it in Arkiv via Spuro.
-              </li>
-              <li>
-                Opinionated{" "}
-                <span className="font-semibold">agent blueprints</span> (docs +
-                sample code) showing how a new team could plug in their own
-                prompts/logic while reusing the AI-Spuro SDK for Spuro-backed
-                memory and external data fetches (Polkadot or otherwise).
-              </li>
-              <li>
-                A clearly scoped{" "}
-                <span className="font-semibold">demo runbook</span> describing
-                how judges can spin up the SDK, connect it to Spuro, and run at
-                least two different agents (e.g. Polkadot stash monitor +
-                generic snapshotting agent) end-to-end.
-              </li>
-            </ul>
-          </div>
+            <div className="space-y-5 text-sm sm:text-base text-gray-700">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  What we built/validated this weekend
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    <span className="font-semibold">Spuro backend</span>:
+                    FastAPI service wrapping Arkiv with x402/HTTPayer, exposing
+                    paid entity endpoints.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Spuro Functions SDK</span>{" "}
+                    in{" "}
+                    <code className="font-mono text-[0.7rem]">packages/ts</code>
+                    , providing typed helpers like{" "}
+                    <code className="font-mono text-[0.7rem]">
+                      createEntity
+                    </code>{" "}
+                    and{" "}
+                    <code className="font-mono text-[0.7rem]">
+                      queryEntities
+                    </code>
+                    .
+                  </li>
+                  <li>
+                    <span className="font-semibold">AI-Spuro demo agent</span>{" "}
+                    that snapshots Polkadot stash accounts via PAPI and persists
+                    them to Arkiv through Spuro.
+                  </li>
+                </ul>
+              </div>
 
-          {/* Timeline */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-2">Timeline</h2>
-            <div className="grid gap-4 sm:grid-cols-3 text-sm sm:text-base text-gray-700">
-              <div className="rounded-xl bg-gray-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
-                  Weeks 1–2
-                </p>
-                <ul className="list-disc pl-4 space-y-1">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  What&apos;s working
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
                   <li>
-                    Finalize Spuro backend API surface and OpenAPI docs for the
-                    core entity endpoints.
+                    End-to-end flow from external data source → AI-Spuro agent →
+                    Spuro → Arkiv, with x402 handling payments at the HTTP
+                    layer.
                   </li>
                   <li>
-                    Extract the existing Spuro Functions into a dedicated
-                    AI-Spuro SDK package with clear typings and examples.
+                    Docs &amp; catalogue UI that explains the core Spuro
+                    endpoints and the Spuro Functions used by AI-Spuro.
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl bg-gray-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
-                  Weeks 3–4
-                </p>
-                <ul className="list-disc pl-4 space-y-1">
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  What still needs work
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
                   <li>
-                    Implement deeper Spuro/Arkiv usage patterns in the SDK
-                    (query helpers, pagination, and higher-level memory
-                    utilities for agents).
+                    Turning AI-Spuro into a reusable{" "}
+                    <span className="font-semibold">Spuro Agent SDK</span> so
+                    other teams can plug in their own prompts and flows.
                   </li>
                   <li>
-                    Add at least one integration that uses an external data
-                    source (including the existing Polkadot PAPI flow) and
-                    document how agents should call it via the SDK.
+                    Sharper agent patterns for Arkiv-backed memory (TTL,
+                    session-scoped buckets, query helpers).
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl bg-gray-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
-                  Weeks 5–6
-                </p>
-                <ul className="list-disc pl-4 space-y-1">
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  Blockers or hurdles we hit
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
                   <li>
-                    Ship polished docs and code examples that show how to create
-                    new agents with the SDK in under an hour.
+                    Balancing time between core infra (Spuro/Arkiv/x402) and
+                    higher-level DX (SDK ergonomics, agent templates).
                   </li>
                   <li>
-                    Run end-to-end demo rehearsals and finalize the Milestone 2
-                    submission narrative (including video/script).
+                    Designing abstractions that work both for Polkadot data and
+                    non‑Polkadot data sources without over-complicating the SDK.
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Resources */}
+          {/* WHAT WE'LL SHIP IN 30 DAYS */}
           <div className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
             <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-              Resources
+              🚀 What we&apos;ll ship in 30 days
             </h2>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
-              <li>
-                <span className="font-semibold">Team</span>: Backend engineer
-                (Spuro/Arkiv), infra/payments engineer (HTTPayer/x402), and
-                front-end/agent-experience engineer (docs catalogue, SDK DX, and
-                examples).
-              </li>
-              <li>
-                <span className="font-semibold">Tooling</span>: FastAPI,
-                TypeScript/Node, Next.js 16, Tailwind CSS, Arkiv SDK, HTTPayer
-                client, and optional PAPI / other data-provider SDKs.
-              </li>
-              <li>
-                <span className="font-semibold">Environments</span>: Hosted
-                Spuro backend with live OpenAPI docs, local dev environment, and
-                a public demo deployment for judges.
-              </li>
-            </ul>
+
+            <div className="space-y-5 text-sm sm:text-base text-gray-700">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  Our MVP will do this
+                </h3>
+                <p>
+                  Ship an <span className="font-semibold">AI SDK for Spuro</span>{" "}
+                  that any TypeScript agent can import to get Arkiv-backed
+                  memory, x402-paid storage, and ready-made helpers for
+                  snapshotting external data (starting with Polkadot accounts).
+                  For hackathon teams and future users, this means they can wire
+                  &quot;agent memory as a service&quot; into their bots in under
+                  an hour.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                  Features we&apos;ll build (3–5 max)
+                </h3>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
+                      Weeks 1–2
+                    </p>
+                    <p className="text-sm font-semibold mb-1">
+                      Feature: Spuro Agent SDK package
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-700 mb-1">
+                      Why it matters: turns today&apos;s Spuro Functions into a
+                      consumable SDK with clear typings, examples, and sensible
+                      defaults for agents.
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-700">
+                      Who builds it: backend/SDK engineer (Spuro + Arkiv).
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
+                      Weeks 2–3
+                    </p>
+                    <p className="text-sm font-semibold mb-1">
+                      Feature: Agent memory patterns &amp; helpers
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-700 mb-1">
+                      Why it matters: gives teams opinionated recipes for
+                      snapshots, TTL, and querying so they don&apos;t have to
+                      design their own Arkiv schema.
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-700">
+                      Who builds it: backend + agent-experience engineer.
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
+                      Weeks 3–4
+                    </p>
+                    <p className="text-sm font-semibold mb-1">
+                      Feature: Example agents &amp; docs
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-700 mb-1">
+                      Why it matters: shows how to plug the SDK into concrete
+                      agents (Polkadot stash monitor plus a generic snapshotting
+                      bot) and how to run them end-to-end.
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-700">
+                      Who builds it: frontend/docs + agent-experience engineer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                  Team breakdown
+                </h3>
+                <div className="grid gap-4 sm:grid-cols-3 text-xs sm:text-sm text-gray-700">
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="font-semibold mb-1">
+                      Backend Engineer – Spuro/Arkiv | ~10 hrs/week
+                    </p>
+                    <p>Owns: Spuro API surface, Arkiv entity design, SDK core.</p>
+                  </div>
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="font-semibold mb-1">
+                      Infra/Payments Engineer – HTTPayer/x402 | ~8 hrs/week
+                    </p>
+                    <p>
+                      Owns: x402 payment flows, API security, example configs for
+                      paid agents.
+                    </p>
+                  </div>
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="font-semibold mb-1">
+                      Agent Experience Engineer – SDK DX &amp; Docs | ~8 hrs/week
+                    </p>
+                    <p>
+                      Owns: AI-Spuro CLI demos, docs site, agent templates, and
+                      onboarding guides.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                  Mentoring &amp; expertise we need
+                </h3>
+                <div className="grid gap-4 sm:grid-cols-2 text-xs sm:text-sm text-gray-700">
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="font-semibold mb-1">Areas where we need support</p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>
+                        Validating our SDK design against how other agent
+                        frameworks structure tools and memory.
+                      </li>
+                      <li>
+                        Stress-testing Arkiv/Spuro patterns for scale and
+                        long-lived agent sessions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="rounded-xl bg-gray-50 p-4">
+                    <p className="font-semibold mb-1">
+                      Specific expertise we&apos;re looking for
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>
+                        Mentors with experience building agent SDKs or tool
+                        ecosystems.
+                      </li>
+                      <li>
+                        Experts in Arkiv / on-chain data storage best practices
+                        to review our entity and TTL design.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Risks & Mitigation */}
+          {/* WHAT HAPPENS AFTER */}
           <div className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
             <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-              Risks &amp; Mitigation
+              🎯 What happens after
             </h2>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
-              <li>
-                <span className="font-semibold">API instability</span>: Changes
-                to the Spuro or HTTPayer API late in the hackathon could break
-                docs and examples.{" "}
-                <span className="font-semibold">Mitigation</span>: freeze
-                critical endpoints by the start of Week 2 and maintain a
-                versioned OpenAPI schema.
-              </li>
-              <li>
-                <span className="font-semibold">Integration complexity</span>:
-                Connecting AI-Spuro, PAPI, Arkiv, and HTTPayer might introduce
-                hard-to-debug issues.{" "}
-                <span className="font-semibold">Mitigation</span>: keep each
-                integration well-isolated, with health-check endpoints and
-                minimal, focused examples.
-              </li>
-              <li>
-                <span className="font-semibold">Time constraints</span>:
-                Polishing UX and docs may get deprioritized against core
-                backend work.{" "}
-                <span className="font-semibold">Mitigation</span>: treat the
-                docs app as a first-class deliverable with dedicated owner and
-                weekly review.
-              </li>
-            </ul>
-          </div>
+            <div className="space-y-5 text-sm sm:text-base text-gray-700">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  When M2 is done, we plan to...
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    Open up the Spuro Agent SDK to early design partners (other
+                    hackathon teams, infra projects) and iterate on feedback.
+                  </li>
+                  <li>
+                    Add 1–2 additional example agents beyond Polkadot, showing
+                    how Spuro-backed memory can power any autonomous workflow.
+                  </li>
+                </ul>
+              </div>
 
-          {/* Success Criteria */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-              Success Criteria
-            </h2>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
-              <li>
-                A judge can follow the Milestone 2 docs to run the Spuro backend,
-                AI-Spuro CLI, and at least one end-to-end snapshot flow without
-                needing additional explanation.
-              </li>
-              <li>
-                The docs clearly communicate how HTTPayer/x402, Arkiv, and
-                Spuro fit together in the architecture, with Polkadot used as
-                one concrete example rather than a hard dependency.
-              </li>
-              <li>
-                The Milestone 2 plan on this page matches the final submission
-                (features shipped, scope, and positioning).
-              </li>
-            </ul>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  And 6 months out we see our project achieve:
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    Multiple external teams shipping production agents that rely
+                    on Spuro/Arkiv as their primary memory layer.
+                  </li>
+                  <li>
+                    Spuro recognized as a core building block for{" "}
+                    <span className="font-semibold">agent-native
+                    infrastructure</span>, with HTTPayer/x402 and Arkiv
+                    underneath and a healthy ecosystem of community-contributed
+                    agent templates on top.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
       </div>
