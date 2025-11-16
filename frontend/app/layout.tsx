@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 };
 
 // Set metadataBase so Next can resolve social images/OG/twitter assets correctly
-export const metadataBase = new URL("https://arkivenue.example");
+export const metadataBase = new URL("https://spuro.example");
 
 export default function RootLayout({
   children,

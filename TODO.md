@@ -10,14 +10,14 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 
   - Walkthrough of what you built + your pitch
   - Include: problem, solution, demo, market context, Milestone 2 overview
-  - Show: purchasing via Arkivenue marketplace, running ai-rkiv agent, reading + writing snapshots, and TTL expiry in action
+  - Show: purchasing via Spuro marketplace, running ai-rkiv agent, reading + writing snapshots, and TTL expiry in action
   - Upload to any platform (e.g., YouTube, Loom) and share the link
 
 - [ ] Pitch deck (URL)
 
   - Problem & solution
   - Market research & competitive analysis
-  - Technical approach (Arkivendor backend, Arkivenue marketplace, ai-rkiv CLI)
+  - Technical approach (Arkivendor backend, Spuro marketplace, ai-rkiv CLI)
   - Milestone 2 plan summary
 
 - [ ] Public GitHub repository
@@ -43,20 +43,20 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 
   - ai-rkiv CLI connecting to Polkadot via PAPI
   - Arkivendor backend API functional
-  - Arkivenue marketplace (can be mocked / locally deployed)
+  - Spuro marketplace (can be mocked / locally deployed)
 
 - [ ] Functional prototype demonstrating core features
 
   - ai-rkiv agent can query Polkadot stash accounts
   - Arkivendor API can store/retrieve snapshots with TTL
   - HTTPayer handles x402 payments seamlessly
-  - Arkivenue marketplace displays listings for Memory Bucket and Polkadot Data API
+  - Spuro marketplace displays the Memory Bucket listing (Polkadot data is fetched externally via PAPI)
 
 - [ ] Clear instructions for judges to test functionality
 
   - Setup instructions for Arkivendor backend
   - Setup instructions for ai-rkiv CLI
-  - How to access Arkivenue marketplace
+  - How to access Spuro marketplace
   - How to run the agent and verify it works
 
 - [ ] Demo URL (if deployed) - nice to have
@@ -72,7 +72,7 @@ Use this checklist to ensure you've submitted everything required. **Incomplete 
 - [ ] Public live demo link
 
   - Arkivendor backend API endpoint
-  - Arkivenue marketplace page (can be mocked / locally deployed)
+  - Spuro marketplace page (can be mocked / locally deployed)
 
 - [ ] Public repo with `README.md`: what it does, how to run it, how Arkiv is used
 

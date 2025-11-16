@@ -72,12 +72,6 @@ export default function PaymentModal({ product, onClose }: PaymentModalProps) {
                 Memory Bucket API
               </label>
             </div>
-            <div className="flex items-center">
-              <input type="checkbox" id="polkadot" className="mr-2" defaultChecked />
-              <label htmlFor="polkadot" className="text-sm">
-                Polkadot Data API
-              </label>
-            </div>
           </div>
 
           <button className="w-full bg-pink-600 text-white py-3 rounded font-semibold hover:bg-pink-700 transition">
